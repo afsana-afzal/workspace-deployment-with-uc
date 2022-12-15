@@ -4,6 +4,12 @@ resource "databricks_metastore" "this" {
   force_destroy = true
 }
 
+resource "databricks_metastore_assignment" "default_metastore" {
+  workspace_id         = var.databricks_workspace
+  metastore_id         = databricks_metastore.this.id
+  default_catalog_name = "hive_metastore"
+}
+
 resource "databricks_metastore_data_access" "this" {
   metastore_id = databricks_metastore.this.id
   name         = var.uc_iam_name
@@ -11,10 +17,7 @@ resource "databricks_metastore_data_access" "this" {
     role_arn = var.uc_iam_arn
   }
   is_default = true
-}
-
-resource "databricks_metastore_assignment" "default_metastore" {
-  workspace_id         = var.databricks_workspace
-  metastore_id         = databricks_metastore.this.id
-  default_catalog_name = "hive_metastore"
+  depends_on = [
+    databricks_metastore_assignment.default_metastore
+  ]
 }

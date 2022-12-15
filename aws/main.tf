@@ -11,7 +11,7 @@ locals {
   sg_egress_protocol           = ["tcp", "udp"]
   availability_zones           = split(",", var.availability_zones)
   dbfsname                     = join("", [local.prefix, "-", var.region, "-", "dbfsroot"]) 
-  ucname                       = join("", [local.prefix, "-", var.region, "-", "ucname"]) 
+  ucname                       = join("", [local.prefix, "-", var.region, "-", "uc"]) 
 }
 
 // Create External Databricks Workspace

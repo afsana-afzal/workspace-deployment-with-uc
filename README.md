@@ -1,4 +1,4 @@
-# Standard Workspace Deployment Example
+# Standard Workspace + Unity Catalog Deployment Example
 
 There are no guarantees or warranties associated with this example.
 

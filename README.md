@@ -1,6 +1,9 @@
-# Standard Workspace + Unity Catalog Deployment Example
+# Databricks Workspace Deployment with Unity Catalog
 
-There are no guarantees or warranties associated with this example.
+#Requirements
+
+1. Deployed Databricks Account with Enterprise Tier subscription
+2. Already set up cloud account (e.g. AWS, GCP or Azure)
 
 # Getting Started
 
@@ -8,19 +11,27 @@ There are no guarantees or warranties associated with this example.
 
 2. Install [Terraform](https://developer.hashicorp.com/terraform/downloads)
 
-3. Fill out `example.tfvars` and place in `aws` directory
+3. `cd` into the directory corresponding to the cloud provider of your choice (`aws`, `gcp`, `azure`)
 
-5. CD into `aws`
+4. Fill out `<cloud>_example.tfvars`
 
 5. Run `terraform init`
 
 6. Run `terraform validate`
 
-7. From `aws` directory, run `terraform plan -var-file ../example.tfvars`
+7. Run `terraform plan -var-file <cloud>_example.tfvars`
 
-8. Run `terraform apply -var-file ../example.tfvars`
+8. Run `terraform apply -var-file <cloud>_example.tfvars`
 
 
-# Network Diagram
+# Network Diagrams
 
-![Architecture Diagram](https://github.com/JDBraun/standard-terraform-example/blob/master/img/Standard%20-%20Network%20Topology.png)
+### AWS Network Diagram
+
+![Architecture Diagram](https://github.com/afsana-afzal/workspace-deployment-with-uc/blob/master/img/AWS_Standard_Network_Topology.png)
+
+### GCP Network Diagram
+#TODO
+
+### Azure Network Diagram
+#TODO

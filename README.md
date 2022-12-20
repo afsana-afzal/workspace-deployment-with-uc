@@ -1,6 +1,6 @@
 # Databricks Workspace Deployment with Unity Catalog
 
-#Requirements
+# Requirements
 
 1. Deployed Databricks Account with Enterprise Tier subscription
 2. Already set up cloud account (e.g. AWS, GCP or Azure)
